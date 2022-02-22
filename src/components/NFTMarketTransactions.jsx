@@ -24,9 +24,9 @@ function NFTMarketTransactions() {
       "image",
     ])
   );
-  const queryMarketItems = useMoralisQuery("MarketItems");
-  const fetchMarketItems = JSON.parse(
-    JSON.stringify(queryMarketItems.data, [
+  const queryMarketitemS = useMoralisQuery("MarketitemS");
+  const fetchMarketitemS = JSON.parse(
+    JSON.stringify(queryMarketitemS.data, [
       "updatedAt",
       "price",
       "nftContract",
@@ -130,7 +130,7 @@ function NFTMarketTransactions() {
     }
   ];
 
-  const data = fetchMarketItems?.map((item, index) => ({
+  const data = fetchMarketitemS?.map((item, index) => ({
     key: index,
     date: moment(item.updatedAt).format("DD-MM-YYYY HH:mm"),
     collection: item.nftContract,
